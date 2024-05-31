@@ -1,13 +1,28 @@
-title: Caio's Portfolio
-email: your-email@example.com
-description: >-
-  Welcome to Caio's digital playground! Dive into a curated collection of my completed projects that push the boundaries of innovation. Stay tuned for upcoming ventures that promise to transform ideas into reality. Explore, get inspired, and join the journey of creation and discovery.
-baseurl: "" # the subpath of your site, e.g., /blog
-url: "https://CaioCoderOne.github.io" # replace with your GitHub Pages URL
-twitter_username: CaioCoderOne
-github_username: CaioCoderOne
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>{{ site.title }}</h1>
+        <nav>
+            <a href="#completed-projects">Completed Projects</a>
+            <a href="#upcoming-projects">Upcoming Projects</a>
+        </nav>
+    </header>
 
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <p>Contact: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </footer>
+
+    <script src="{{ site.baseurl }}/assets/js/scripts.js"></script>
+</body>
+</html>
