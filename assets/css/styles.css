@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f0f0f0; /* Placeholder for visibility */
+    background-color: #f0f0f0; /* Background color for visibility */
 }
 
 header {
@@ -38,20 +38,54 @@ h2 {
     display: flex;
     overflow: hidden;
     position: relative;
-    height: 200px;
-}
-
-.slide {
-    min-width: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
     width: 100%;
-    bottom: 0;
+}
+
+.card {
+    background-color: #007BFF; /* Blue background */
+    color: #fff;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.5s, background-color 0.5s;
+    perspective: 1000px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card .card-front,
+.card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .card-back {
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);
 }
